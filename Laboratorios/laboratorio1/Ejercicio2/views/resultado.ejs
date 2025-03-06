@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <style>
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: rgb(243, 243, 243);
+    }
+    </style>
+</head>
+<body>
+    <a href="/">Volver</a>
+    <h1>Tabla de <%= operacion %></h1>
+    <table style="border-collapse: collapse; width: 100%; text-align: center;" border="1">
+        <thead>
+            <tr>
+                <th>Número 1</th>
+                <th>Operacion</th>
+                <th>Numero 2</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tabla.forEach(row => { %>
+                <tr>
+                    <td><%= row.numero %></td>
+                    <td><%= row.simbolo %></td>
+                    <td><%= row.i %></td>
+                    <td style="font-weight: bold;"><%= row.resultado %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <br>
+</body>
+</html>

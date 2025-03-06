@@ -1,0 +1,9 @@
+<% include('layout', { body: null }) %>
+<h2>Editar agenda</h2>
+<form action="/edit/<%= agenda.id %>" method="POST">
+  <label>Nombres: <input type="text" name="nombre" required value="<%= agenda.nombres %>"></label>
+  <label>Apellidos: <input type="text" name="apellido" step="0.01" required value="<%= agenda.apellidos %>"></label>
+  <label>Direccion: <input type="text" name="direccion" required value="<%= agenda.direccion %>"></label>
+  <label>Telefono: <input type="number" name="telefono" required value="<%= agenda.telefono %>"></label>
+  <button type="submit">Actualizar</button>
+</form>
