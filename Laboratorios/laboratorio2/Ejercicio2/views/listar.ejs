@@ -1,0 +1,28 @@
+<% include('layout', { body: null }) %>
+<h2>Lista de Productos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Nombre</th>
+      <th>Correo electronico</th>
+      <th>Fecha de registro</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.nombre %></td>
+        <td><%= user.correo_electronico %></td>
+        <td><%= user.fecha_registro.toISOString().split("T")[0] %></td>
+        <td>
+          <a href="/delete/<%= user.id %>">Eliminar</a>
+        </td>
+      </tr>
+    <% }) %>
+
+    <a href="/add">Registrar Usuario</a>
+  </tbody>
+</table>
